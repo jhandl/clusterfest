@@ -1,0 +1,5 @@
+#summary Clusterfest home
+
+= Welcome to Clusterfest Documentation Wiki =
+
+Javadoc can be found [http://opensource.flaptor.com/clusterfest/javadoc here]
