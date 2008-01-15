@@ -4,7 +4,7 @@
 
 [http://opensource.flaptor.com/clusterfest/javadoc API documentation]
 
-[understanding Understanding clusterfest structure]
+[understanding Understanding clusterfest]
 
 [runningWebapp Running the webapp]
 
