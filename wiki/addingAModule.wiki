@@ -25,4 +25,23 @@ abstract public boolean updateNode(ModuleNode node);
 }}}
 this is optional, if you have something to update in the node, it will be called periodically.
 
+== RPC interface ==
+
+Then you probably want some RPC from server to the node. You must define an interface for this RPC (like [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/nodes/Monitoreable.java Monitoreable]). Then you must implement it in the node and use it in the server.
+
+Say {{{ServiceInterface}}} is the interface for RPC and {{{node}}} is the {{{Node}}} registered in clusterfest, for using it in the server you
+
+{{{
+ServiceInterface s = (ServiceInterface)XmlrpcClient.proxy("ServiceInterfaceContext", ServiceInterface.class, node.getXmlrpcClient());
+}}}
+
 == Creating the module node-code ==
+
+Node side, you must create an implementation for that service. Say {{{ServiceImplementation}}} is an implementation of ServiceInterface:
+
+{{{
+ClusterableServer clusterableServer = ...;
+clusterableServer.addModuleServer("ServiceInterfaceContext", XmlrpcSerialization.handler(new ServiceImplementation()))
+}}}
+
+Note that XmlrpcSerialization.handler(...) creates a handler that automatically serializes/deserializes types unsupported by xmlrpc protocol. If you stay within xmlrpc supported types in all your interface methods, you dont need it and can use {{{clusterableServer.addModuleServer("ServiceInterfaceContext", new ServiceImplementation())}}} directly.
