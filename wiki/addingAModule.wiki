@@ -45,3 +45,6 @@ clusterableServer.addModuleServer("ServiceInterfaceContext", XmlrpcSerialization
 }}}
 
 Note that XmlrpcSerialization.handler(...) creates a handler that automatically serializes/deserializes types unsupported by xmlrpc protocol. If you stay within xmlrpc supported types in all your interface methods, you dont need it and can use {{{clusterableServer.addModuleServer("ServiceInterfaceContext", new ServiceImplementation())}}} directly.
+
+== Interface ==
+When your module is fully functional you can [addingWebInterface add a web interface] to the clusterfest webapp.
