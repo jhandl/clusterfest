@@ -3,3 +3,9 @@
 = Welcome to Clusterfest Documentation Wiki =
 
 [http://opensource.flaptor.com/clusterfest/javadoc API documentation]
+
+[understanding Understanding clusterfest structure]
+
+[runningWebapp Running the webapp]
+
+[addingAModule Adding a module]
