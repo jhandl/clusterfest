@@ -2,10 +2,12 @@
 
 = Welcome to [http://opensource.flaptor.com/clusterfest Clusterfest] Documentation Wiki =
 
-[http://opensource.flaptor.com/clusterfest/javadoc API documentation]
-
 [understanding Understanding clusterfest]
 
 [runningAsIs Running clusterfest as is]
 
 [addingAModule Adding a module]
+
+
+
+[http://opensource.flaptor.com/clusterfest/javadoc API documentation]
