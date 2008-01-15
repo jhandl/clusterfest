@@ -1,0 +1,46 @@
+#summary Adding web interface to a custom module
+
+= Adding web interface =
+
+Most modules will have a web interface. It is desirable are as integrated as possible to the core clusterfest web interface and that is why {{{WebModule}}} API was invented. You can see how this was implemented in the [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/monitor/Monitor.java   Monitor module].
+
+You can add HTML code to the main page in two ways
+
+ * for the whole module:
+{{{
+String getModuleHTML();
+}}}
+ * for each node in the node list
+{{{
+String getNodeHTML(Node node, int nodeNum);
+}}}
+
+Then you can register actions for this module with this method:
+{{{
+List<String> getActions();
+}}}
+If you return a list containing {{{"TheAction"}}} and there is a request of {{{index.jsp?action=TheAction}}} the following method will be called in your module
+{{{
+String action(String action,  HttpServletRequest request);
+}}}
+
+There are two ways of adding pages to the webapp:
+ * adding JSPs to the web-clustering folder (recommended)
+ * adding handlers to the webserver. For this, the following method will be called when registering the webmodule:
+{{{
+void setup(WebServer server);
+}}}
+
+== JSP structure ==
+
+If you decide to add JSPs to the webapp folder, you already have some include files to keep the style and coherence with the rest of the clustering webapp. You should include this at the top
+{{{
+<%request.setAttribute("pageTitle","home");%>
+<%@include file="include.top.jsp" %>
+}}}
+and this at the bottom
+{{{
+<%@include file="include.bottom.jsp" %>
+}}}
+
+Here is an example of [http://clusterfest.googlecode.com/svn/trunk/src/web-clustering/monitorNode.jsp monitorNode.jsp], the node page for the monitoring framework.
