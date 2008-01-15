@@ -1,6 +1,6 @@
 #summary Clusterfest home
 
-= Welcome to Clusterfest Documentation Wiki =
+= Welcome to [http://opensource.flaptor.com/clusterfest Clusterfest] Documentation Wiki =
 
 [http://opensource.flaptor.com/clusterfest/javadoc API documentation]
 
