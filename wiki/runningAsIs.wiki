@@ -46,3 +46,7 @@ Then add module servers. Most modules will give you a helper method
 Monitor.addMonitorServer(clusterableServer, new AbstractMonitoreable() {...implement methods here...});
 Controller.addControllerServer(cclusterableServer, new ControllableImplementation());
 }}}
+
+Otherwise you have to provide a context (String) and a handler (implementation of the module interface wrapped by {{{XmlrpcSerialization}}} - see [addingAModule adding a module])
+
+{{{clusterableServer.addModuleServer("controllable", XmlrpcSerialization.handler(new ControllableImplementation()));}}}
