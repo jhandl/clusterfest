@@ -1,13 +1,28 @@
-#summary One-sentence summary of this page.
+#summary Creating and adding a custom module
 
-= Introduction =
+= Adding a module =
 
-Add your content here.
+A module provides some functionality over some or all the nodes of the clustering framework. A typical module contains server and node side code.
 
+You can check all this with the [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/ Monitor module]
 
-= Details =
+== Creating the module server-code ==
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+To create a module you must make a subclass of {{{NodeContainerModule}}}. This abstract class already has implemented most of the functionality for registering nodes. You will have to implement these methods:
+
+{{{
+abstract public boolean nodeBelongs(Node node) throws NodeUnreachableException;
+}}}
+to determine if a node belongs to this module (maybe not all nodes belong). If the node is unreachable you can throw a NodeUnreachableException and leave that question for later.
+
+{{{
+abstract protected ModuleNode createModuleNode(Node node)
+}}}
+if the node belongs, it will ask you to create a {{{ModuleNode}}} for that node, which will be registered in the module. This is where you can store information of the node.
+
+{{{
+abstract public boolean updateNode(ModuleNode node);
+}}}
+this is optional, if you have something to update in the node, it will be called periodically.
+
+== Creating the module node-code ==
