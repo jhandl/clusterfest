@@ -1,0 +1,33 @@
+#summary How to implement and run a clusterfest basic installation
+
+This section takes the terminology from [understanding understanding clusterfest]
+
+==Steps to have a running installation==
+You must:
+
+ * server-side:
+    * configure the server (tell it where the nodes are and what modules to use)
+    * run the server (start clusterfest and its web server)
+    * Use a webbrowser to access the frontend
+ * node-side:
+    * add clustering code (add code that will enable the RPC listener on the node)
+    * run the nodes 
+
+==Configuring the server==
+
+Configuration of the server is done in the {{{clustering.properties}}} config file. This file imports defaults from {{{clustering.properties.defaults}}} file that can be found inside the distribution jar.
+
+Here you can config:
+
+ * {{{clustering.nodes}}}: the list of nodes
+ * {{{clustering.modules}}}: the list of modules 
+
+And extra module configuration can be added here
+
+==Running the server==
+
+Running the server means executing the {{{main}}} method in {{{com.flaptor.clustering.HTTPClusteringServer}}} with the port as a parameter
+
+a {{{start.sh}}} is provided that starts clusterfest in port 47050
+
+also there is {{{status.sh}}} (tells you if it is running) and {{{stop.sh}}} (kills the server)
