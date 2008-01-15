@@ -31,3 +31,18 @@ Running the server means executing the {{{main}}} method in {{{com.flaptor.clust
 a {{{start.sh}}} is provided that starts clusterfest in port 47050
 
 also there is {{{status.sh}}} (tells you if it is running) and {{{stop.sh}}} (kills the server)
+
+==Adding clustering code to the node==
+
+Somewhere in your node code you must create a {{{ClusterableServer}}} specifying a port and a node type (String)
+
+{{{
+ClusterableServer clusterableServer = new ClusterableServer(port , clusteringNodeType);
+}}}
+
+Then add module servers. Most modules will give you a helper method
+
+{{{
+Monitor.addMonitorServer(clusterableServer, new AbstractMonitoreable() {...implement methods here...});
+Controller.addControllerServer(cclusterableServer, new ControllableImplementation());
+}}}
