@@ -49,4 +49,6 @@ Controller.addControllerServer(cclusterableServer, new ControllableImplementatio
 
 Otherwise you have to provide a context (String) and a handler (implementation of the module interface wrapped by {{{XmlrpcSerialization}}} - see [addingAModule adding a module])
 
-{{{clusterableServer.addModuleServer("controllable", XmlrpcSerialization.handler(new ControllableImplementation()));}}}
+{{{
+clusterableServer.addModuleServer("controllable", XmlrpcSerialization.handler(new ControllableImplementation()));
+}}}
