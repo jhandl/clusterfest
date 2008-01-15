@@ -2,6 +2,8 @@
 
 = Welcome to [http://opensource.flaptor.com/clusterfest Clusterfest] Documentation Wiki =
 
+== Developer guide ==
+
 [understanding Understanding clusterfest]
 
 [runningAsIs Running clusterfest as is]
@@ -10,5 +12,10 @@
 
 [addingWebInterface Adding web interface to a module]
 
+== Modules ==
 
+[monitoring Monitoring]
+[controlling Controlling]
+
+== API ==
 [http://opensource.flaptor.com/clusterfest/javadoc API documentation]
