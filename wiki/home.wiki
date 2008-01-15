@@ -6,6 +6,6 @@
 
 [understanding Understanding clusterfest]
 
-[runningWebapp Running the webapp]
+[runningAsIs Running clusterfest as is]
 
 [addingAModule Adding a module]
