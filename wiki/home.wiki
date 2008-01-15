@@ -8,6 +8,7 @@
 
 [addingAModule Adding a module]
 
+[addingWebInterface Adding web interface to a module]
 
 
 [http://opensource.flaptor.com/clusterfest/javadoc API documentation]
