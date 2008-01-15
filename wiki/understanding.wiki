@@ -24,14 +24,3 @@ Clusterfest works in java so both nodes and server will be running JVMs. Communi
 The server runs in a dedicated jvm with only clusterfest server. The nodes run the client code and a clusterfest code that listens on a port for connections from the server. Communication is done through RPC. The server executes (via xmlrpc) remote methods on the nodes. 
 
 For a node to be registered in clusterfest it must export the {{{Clusterable}}} interface. Then it can export other interfaces corresponding to other modules ({{{Monitoreable}}}, {{{Controllable}}}, etc).
-
-==Configuring the server==
-
-Configuration of the server is done in the {{{clustering.properties}}} config file. This file imports defaults from {{{clustering.properties.defaults}}} file that can be found inside the distribution jar.
-
-Here you can config:
-
- * {{{clustering.nodes}}}: the list of nodes
- * {{{clustering.modules}}}: the list of modules 
-
-And extra module configuration can be added here
