@@ -28,13 +28,13 @@ And extra module configuration can be added here
 
 Running the server means executing the {{{main}}} method in {{{com.flaptor.clustering.HTTPClusteringServer}}} with the port as a parameter
 
-a {{{start.sh}}} is provided that starts clusterfest in port 80
+a {{{start.sh}}} is provided that starts clusterfest in port 47050
 
 also there is {{{status.sh}}} (tells you if it is running) and {{{stop.sh}}} (kills the server)
 
 then check on your web browser
 {{{
-http://localhost/clustering
+http://localhost:47050/clustering
 }}}
 
 ==Adding clustering code to the node==
