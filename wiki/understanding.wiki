@@ -2,8 +2,6 @@
 
 = Understanding Clusterfest =
 
-==Naming machines==
-
 Clusterfest helps you manage a multimachine installation in a centralized manner. Thus, we will have:
 
  * the nodes: the machines we want to manage.
