@@ -4,6 +4,6 @@
 
 The control module allows you to start, pause, resume, stop and kill nodes and to send commands to the nodes (TODO).
 
-To start and kill nodes, the module sends a command via SSH to execute start.sh and stop.sh in the node install dir. This obviously works on unix only. If the password is not saved in the machine this will fail.
+To start and kill nodes, the module sends a command via SSH to execute start.sh and stop.sh in the node install dir. This obviously works on unix only. If the private/public key pair is not properly setup to allow password-less access from the server to the node machine, this will fail.
 
 Pause, resume and stop are sent through the controllable interface via RPC.
