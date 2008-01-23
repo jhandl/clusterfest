@@ -4,47 +4,46 @@
 
 A module provides some functionality over some or all the nodes of the clustering framework. A typical module contains server and node side code.
 
-You can check all this with the Monitor module. See the [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/monitor/Monitor.java server-side code] and the [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/nodes node-side code]
+You can check all this with the Monitor module. See the [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/monitor/Monitor.java server-side code] and the [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/nodes/AbstractMonitoreable.java node-side code]
 
-== Creating the module server-code ==
+== Creating the module server-side code ==
 
-To create a module you must make a subclass of {{{NodeContainerModule}}}. This abstract class already has implemented most of the functionality for registering nodes. You will have to implement these methods:
+To create a module you must make a subclass of {{{NodeContainerModule}}}. This abstract class already has most of the functionality for registering nodes. You will have to implement these methods:
 
 {{{
 abstract public boolean nodeBelongs(Node node) throws NodeUnreachableException;
 }}}
-to determine if a node belongs to this module (maybe not all nodes belong). If the node is unreachable you can throw a NodeUnreachableException and leave that question for later.
+to determine if a node belongs to this module (maybe not all nodes belong). If the node is unreachable you can throw a NodeUnreachableException and leave that decision for later. {{{Cluster}}} periodically goes through the node list and calls this method to re-evaluate to which modules each node belongs to.
 
 {{{
 abstract protected ModuleNode createModuleNode(Node node)
 }}}
-if the node belongs, it will ask you to create a {{{ModuleNode}}} for that node, which will be registered in the module. This is where you can store information of the node.
+if the node belongs, it will ask you to create a {{{ModuleNode}}} for that node, which will be registered in the module. This is where you can store information about the node.
 
 {{{
 abstract public boolean updateNode(ModuleNode node);
 }}}
-this is optional, if you have something to update in the node, it will be called periodically.
+it will be called periodically, here you can update information about the node.
 
 == RPC interface ==
 
-Then you probably want some RPC from server to the node. You must define an interface for this RPC (like [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/nodes/Monitoreable.java Monitoreable]). Then you must implement it in the node and use it in the server.
+You probably want some RPC from the server to the node. You must define an interface for this RPC (like [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/nodes/Monitoreable.java Monitoreable]). Then you must implement it in the node and use it in the server.
 
-Say {{{ServiceInterface}}} is the interface for RPC and {{{node}}} is the {{{Node}}} registered in clusterfest, for using it in the server you
+Say {{{ServiceInterface}}} is the interface for RPC and {{{node}}} is the {{{Node}}} registered in clusterfest. 
+
+Node side, you must create an implementation for that service interface. If {{{ServiceImplementation}}} is an implementation of {{{ServiceInterface}}}:
+
+{{{
+ClusterableServer clusterableServer = ...;
+clusterableServer.addModuleServer("ServiceInterfaceContext", new ServiceImplementation())
+}}}
+
+For using that service it you should add this code in the server:
 
 {{{
 ServiceInterface s = (ServiceInterface)XmlrpcClient.proxy("ServiceInterfaceContext", ServiceInterface.class, node.getXmlrpcClient());
 }}}
 
-== Creating the module node-code ==
-
-Node side, you must create an implementation for that service. Say {{{ServiceImplementation}}} is an implementation of ServiceInterface:
-
-{{{
-ClusterableServer clusterableServer = ...;
-clusterableServer.addModuleServer("ServiceInterfaceContext", XmlrpcSerialization.handler(new ServiceImplementation()))
-}}}
-
-Note that XmlrpcSerialization.handler(...) creates a handler that automatically serializes/deserializes types unsupported by xmlrpc protocol. If you stay within xmlrpc supported types in all your interface methods, you dont need it and can use {{{clusterableServer.addModuleServer("ServiceInterfaceContext", new ServiceImplementation())}}} directly.
-
 == Interface ==
+
 When your module is fully functional you can [addingWebInterface add a web interface] to the clusterfest webapp.
