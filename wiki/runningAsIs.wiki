@@ -22,37 +22,37 @@ Here you can config:
  * {{{clustering.nodes}}}: the list of nodes in the form address:port or address:port:installDir
  * {{{clustering.modules}}}: the list of modules in the form moduleName:moduleClass. The module class must be a subclass of {{{NodeContainerModule}}} and have an empty constructor.
 
-And extra module configuration can be added here
+Any extra module configuration can be added here.
 
 ==Running the server==
 
 Running the server means executing the {{{main}}} method in {{{com.flaptor.clustering.HTTPClusteringServer}}} with the port as a parameter
 
-a {{{start.sh}}} is provided that starts clusterfest in port 47050
+A {{{start.sh}}} is provided that starts clusterfest in port 47050
 
-also there is {{{status.sh}}} (tells you if it is running) and {{{stop.sh}}} (kills the server)
+Also there is {{{status.sh}}} (tells you if it is running) and {{{stop.sh}}} (kills the server)
 
-then check on your web browser
+Then check on your web browser
 {{{
 http://localhost:47050/clustering
 }}}
 
 ==Adding clustering code to the node==
 
-Somewhere in your node code you must create a {{{ClusterableServer}}} specifying a port and a node type (String)
+Somewhere in your node code you must create a {{{ClusterableServer}}} specifying a port and a node type. The node type is a String that allows for further node discrimination, for example for identification in the node list home page (see [http://opensource.flaptor.com/clusterfest/screenshots.html screenshot]), or for enabling different behaviors within a module.
 
 {{{
-ClusterableServer clusterableServer = new ClusterableServer(port , clusteringNodeType);
+ClusterableServer clusterableServer = new ClusterableServer(port, "myNodeType");
 }}}
 
-Then add module servers. Most modules will give you a helper method
+Then add module servers. Most modules will give you a helper method.
 
 {{{
 Monitor.addMonitorServer(clusterableServer, new AbstractMonitoreable() {...implement methods here...});
-Controller.addControllerServer(cclusterableServer, new ControllableImplementation());
+Controller.addControllerServer(clusterableServer, new ControllableImplementation());
 }}}
 
-Otherwise you have to provide a context (String) and a handler (implementation of the module interface wrapped by {{{XmlrpcSerialization}}} - see [addingAModule adding a module])
+Otherwise you have to provide a context (String) and a handler (implementation of the module interface wrapped by {{{XmlrpcSerialization}}} - see [addingAModule adding a module]).
 
 {{{
 clusterableServer.addModuleServer("controllable", XmlrpcSerialization.handler(new ControllableImplementation()));
