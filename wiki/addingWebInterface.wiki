@@ -1,10 +1,10 @@
-#summary Adding web interface to a custom module
+#summary Adding a web interface to a custom module
 
-= Adding web interface =
+= Adding a Web Interface =
 
-Most modules will have a web interface. It is desirable are as integrated as possible to the core clusterfest web interface and that is why {{{WebModule}}} API was invented. You can see how this was implemented in the [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/monitor/Monitor.java   Monitor module].
+Most modules will have a web interface. To keep it closely integrated to the general Clusterfest web app, the {{{WebModule}}} API is provided. You can see how this was implemented in the [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/monitor/Monitor.java   Monitor module].
 
-You can add HTML code to the main page in two ways
+There are two ways of adding HTML code to the main page:
 
  * for the whole module:
 {{{
@@ -15,7 +15,7 @@ String getModuleHTML();
 String getNodeHTML(Node node, int nodeNum);
 }}}
 
-Then you can register actions for this module with this method:
+You can then register actions for the module with this method:
 {{{
 List<String> getActions();
 }}}
@@ -24,7 +24,7 @@ If you return a list containing {{{"TheAction"}}} and there is a request of {{{i
 String action(String action,  HttpServletRequest request);
 }}}
 
-There are two ways of adding pages to the webapp:
+There are also two ways of adding new pages to the webapp:
  * adding JSPs to the web-clustering folder (recommended)
  * adding handlers to the webserver. For this, the following method will be called when registering the webmodule:
 {{{
