@@ -9,16 +9,14 @@ Clusterfest helps you manage a multimachine installation in a centralized manner
 
 ==Modules==
 
-Functionality in clusterfest is provided by modules. These modules run in the server and communicate to some module listener on the nodes. 
+Functionality in clusterfest is provided by modules. These modules run in the server and communicate to some module listener on the nodes.
 
-The core is the {{{Cluster}}} class: it registers the nodes and other modules. This modules decide if nodes belong to that module or not, and register them as module nodes. Ie:
-
-the {{{Monitor}}} module register every {{{Node}}} that is monitoreable (exports the {{{Monitoreable}}} interface) as a {{{MonitorNode}}}
+The core is the {{{Cluster}}} class: it registers the nodes and modules. Each module decides if a node is of interest to it, and if so registers it in the module. Ie: the {{{Monitor}}} module registers every {{{Node}}} that is monitoreable (exports the {{{Monitoreable}}} interface) as a {{{MonitorNode}}}
 
 ==Communication==
 
-Clusterfest works in java so both nodes and server will be running JVMs. Communication will be stablished in the direction server -> nodes, so if there is no server the nodes will not suffer any overhead for clusterfest. Also, this means that the server will know where the nodes are but not the other way round.
+Clusterfest works in java so nodes and server will be running JVMs. Communication will be established in the direction server -> nodes, so if there is no server the nodes will not suffer any overhead. Also, this means that the server will know where the nodes are but not the other way around.
 
-The server runs in a dedicated jvm with only clusterfest server. The nodes run the client code and a clusterfest code that listens on a port for connections from the server. Communication is done through RPC. The server executes (via xmlrpc) remote methods on the nodes. 
+The server runs in a dedicated jvm. The nodes run the client code and clusterfest library that listenes on a port for connections from the server. Communication is done through RPC. The server executes (via xmlrpc) remote methods on the nodes.
 
 For a node to be registered in clusterfest it must export the {{{Clusterable}}} interface. Then it can export other interfaces corresponding to other modules ({{{Monitoreable}}}, {{{Controllable}}}, etc).
