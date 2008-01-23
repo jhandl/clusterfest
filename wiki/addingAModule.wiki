@@ -4,7 +4,7 @@
 
 A module provides some functionality over some or all the nodes of the clustering framework. A typical module contains server and node side code.
 
-You can check all this with the [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/ Monitor module]
+You can check all this with the Monitor module. See the [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/monitor/Monitor.java server-side code] and the [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/nodes node-side code]
 
 == Creating the module server-code ==
 
