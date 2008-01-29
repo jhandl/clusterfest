@@ -10,8 +10,9 @@ You must:
     * run the server (start clusterfest and its web server)
     * Use a webbrowser to access the frontend
  * node-side:
-    * add clustering code (add code that will enable the RPC listener on the node)
-    * run the nodes 
+    * configure the node (tell it what type of node is, and what modules to export)
+    * add clustering node constructor code to your client code
+    * run the nodes
 
 ==Configuring the server==
 
@@ -19,8 +20,10 @@ Configuration of the server is done in the {{{clustering.properties}}} config fi
 
 Here you can config:
 
- * {{{clustering.nodes}}}: the list of nodes in the form address:port or address:port:installDir
- * {{{clustering.modules}}}: the list of modules in the form moduleName:moduleClass. The module class must be a subclass of {{{NodeContainerModule}}} and have an empty constructor.
+ * {{{clustering.nodes}}}
+_the list of nodes in the form address:port or address:port:installDir_
+ * {{{clustering.modules}}}
+_the list of modules in the form moduleName:moduleClass. The module class must be a subclass of {{{NodeContainerModule}}} and have an empty constructor_
 
 Any extra module configuration can be added here.
 
@@ -39,11 +42,18 @@ http://localhost:47050/clustering
 
 ==Adding clustering code to the node==
 
-Somewhere in your node code you must create a {{{ClusterableServer}}} specifying a port and a node type. The node type is a String that allows for further node discrimination, for example for identification in the node list home page (see [http://opensource.flaptor.com/clusterfest/screenshots.html screenshot]), or for enabling different behaviors within a module.
+The server will call remote methods on your nodes. For that to happen you must have a {{{ClusterableListener}}} created somewhere in your node code. You create it specifying a port where it will listen to (which must match the corresponding server node configuration).
 
 {{{
-ClusterableServer clusterableServer = new ClusterableServer(port, "myNodeType");
+ClusterableListener clusterableListener = new ClusterableListener(port);
 }}}
+
+This will read a file called clustering.node.properties for configuration. There you can set the following variables:
+
+ * {{{clustering.node.type}}}
+_The node type is a String that allows for further node discrimination, for example for identification in the node list home page (see [http://opensource.flaptor.com/clusterfest/screenshots.html screenshot]), or for enabling different behaviors within a module_
+ * {{{clustering.node.listeners}}}
+_a list of pairs context:className meaning the class to be instantiated and listen at that context_
 
 Then add module servers. Most modules will give you a helper method.
 
