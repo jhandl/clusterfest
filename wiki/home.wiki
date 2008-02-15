@@ -1,4 +1,5 @@
 #summary Clusterfest home
+#labels Featured
 
 = Welcome to [http://opensource.flaptor.com/clusterfest Clusterfest] Documentation Wiki =
 
