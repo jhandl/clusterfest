@@ -3,6 +3,9 @@
 
 = Welcome to [http://opensource.flaptor.com/clusterfest Clusterfest] Documentation Wiki =
 
+== Project Info ==
+[knownUsers Projects] that use clusterfest
+
 == Developer guide ==
 
 [understanding Understanding clusterfest]
