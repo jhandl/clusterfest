@@ -1,0 +1,5 @@
+#summary Projects that use clusterfest
+
+= Known users =
+
+  * [http://www.search4j.org Search4j]
