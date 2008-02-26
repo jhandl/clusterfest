@@ -4,18 +4,22 @@
 = Welcome to [http://opensource.flaptor.com/clusterfest Clusterfest] Documentation Wiki =
 
 == Project Info ==
-  * [knownUsers Projects] that use clusterfest
+  [knownUsers Projects] that use clusterfest
 
 == Developer guide ==
 
-  * [understanding Understanding clusterfest]
-  * [runningAsIs Running clusterfest as is]
-  * [addingAModule Adding a module]
-  * [addingWebInterface Adding web interface to a module]
+  [understanding Understanding clusterfest]
+
+  [runningAsIs Running clusterfest as is]
+
+  [addingAModule Adding a module]
+
+  [addingWebInterface Adding web interface to a module]
 
 == Modules ==
-  * [monitoring Monitoring]
-  * [controlling Controlling]
+  [monitoring Monitoring]
+
+  [controlling Controlling]
 
 == API ==
-  * [http://opensource.flaptor.com/clusterfest/javadoc API documentation]
+  [http://opensource.flaptor.com/clusterfest/javadoc API documentation]
