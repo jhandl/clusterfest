@@ -3,7 +3,7 @@
 
 = Clusterfest at a glance =
 
-Clusterfest helps you manage a multimachine installation in a centralized manner. We will see the concepts necessary to understand how does clusterfest do this and to allow you to add new functionality.
+Clusterfest helps you manage a multimachine installation in a centralized manner. These are the basic concepts to understand clusterfest.
 
 == Nodes ==
 Say your application is a distributed application, so you will have several computers run your application code. We will call these computers *nodes*:
@@ -27,3 +27,5 @@ http://clusterfest.googlecode.com/files/nodeListener.png
 So how do you use clusterfest? Clusterfest provides a *webapp* to interact with the cluster manager via web. This is done by executing the *http clusterfest server*:
 
 http://clusterfest.googlecode.com/files/httpClusterfestServer.png
+
+[clusterManagerInternals Continue with the ClusterManager internals]
