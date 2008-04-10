@@ -12,6 +12,7 @@ http://opensource.flaptor.com/clusterfest/images/logo.png
 == Developer guide ==
 
   [understanding Clusterfest at a glance] - a very short introduction on the concepts of clusterfest
+  [clusterManagerInternals ClusterManager internals] - the info you need to understand how ClusterManager and to add a module
 
   [runningAsIs Running clusterfest as is]
 
