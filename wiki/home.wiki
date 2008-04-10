@@ -1,7 +1,8 @@
 #summary Clusterfest home
 #labels Featured
 
-= Welcome to [http://opensource.flaptor.com/clusterfest Clusterfest] Documentation Wiki =
+http://opensource.flaptor.com/clusterfest/images/logo.png
+= Documentation Wiki =
 
 == Project Info ==
   [knownUsers Projects] that use clusterfest
