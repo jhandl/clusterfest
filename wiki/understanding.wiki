@@ -1,6 +1,9 @@
 #summary Clusterfest at a glance
 #labels Featured
+
 [home]
+
+http://opensource.flaptor.com/clusterfest/images/logo.png
 
 = Clusterfest at a glance =
 
