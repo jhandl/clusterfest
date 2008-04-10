@@ -1,6 +1,7 @@
-#summary Understanding how clusterfest works
+#summary Clusterfest at a glance
+#labels Featured
 
-= Understanding Clusterfest =
+= Clusterfest at a glance =
 
 Clusterfest helps you manage a multimachine installation in a centralized manner. We will see the concepts necessary to understand how does clusterfest do this and to allow you to add new functionality.
 
@@ -15,20 +16,14 @@ Clusterfest provides a *cluster manager*, which communicates to all the nodes in
 
 http://clusterfest.googlecode.com/files/nodesWithClusterManager.png
 
-== Clusterable Listener ==
+== Node Listener ==
 
-For this to work, nodes must have a clusterable listener
+For this to work, nodes must add a little piece of code called *node listener*, that listens for connections from clusterfest. These connections are done via *XMLRPC*
 
-==Modules==
+http://clusterfest.googlecode.com/files/nodeListener.png
 
-Functionality in clusterfest is provided by modules. These modules run in the server and communicate to some module listener on the nodes.
+== Webapp ==
 
-The core is the {{{Cluster}}} class: it registers the nodes and modules. Each module decides if a node is of interest to it, and if so registers it in the module. Ie: the {{{Monitor}}} module registers every {{{Node}}} that is monitoreable (exports the {{{Monitoreable}}} interface) as a {{{MonitorNode}}}
+So how do you use clusterfest? Clusterfest provides a *webapp* to interact with the cluster manager via web. This is done by executing the *http clusterfest server*:
 
-==Communication==
-
-Clusterfest works in java so nodes and server will be running JVMs. Communication will be established in the direction server -> nodes, so if there is no server the nodes will not suffer any overhead. Also, this means that the server will know where the nodes are but not the other way around.
-
-The server runs in a dedicated jvm. The nodes run the client code and clusterfest library that listenes on a port for connections from the server. Communication is done through RPC. The server executes (via xmlrpc) remote methods on the nodes.
-
-For a node to be registered in clusterfest it must export the {{{Clusterable}}} interface. Then it can export other interfaces corresponding to other modules ({{{Monitoreable}}}, {{{Controllable}}}, etc).
+http://clusterfest.googlecode.com/files/httpClusterfestServer.png
