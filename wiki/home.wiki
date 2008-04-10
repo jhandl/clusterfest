@@ -1,7 +1,7 @@
 #summary Clusterfest home
 #labels Featured
 
-http://opensource.flaptor.com/clusterfest/images/logo.png
+[home http://opensource.flaptor.com/clusterfest/images/logo.png]
 = Documentation Wiki =
 
 == Project Info ==
