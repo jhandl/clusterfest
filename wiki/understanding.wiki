@@ -1,5 +1,6 @@
 #summary Clusterfest at a glance
 #labels Featured
+[home]
 
 = Clusterfest at a glance =
 
@@ -29,3 +30,5 @@ So how do you use clusterfest? Clusterfest provides a *webapp* to interact with 
 http://clusterfest.googlecode.com/files/httpClusterfestServer.png
 
 [clusterManagerInternals Continue with the ClusterManager internals]
+
+[home]
