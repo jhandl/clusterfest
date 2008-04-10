@@ -11,15 +11,13 @@ http://clusterfest.googlecode.com/files/nodes.png
 
 == Cluster Manager ==
 
-Clusterfest adds a *cluster manager*, which communicates to all the nodes in your application:
+Clusterfest provides a *cluster manager*, which communicates to all the nodes in your application:
 
 http://clusterfest.googlecode.com/files/nodesWithClusterManager.png
 
+== Clusterable Listener ==
 
- Thus, we will have:
-
- * the nodes: the machines we want to manage.
- * the server: the machine that runs the clusterfest core, which talks to the nodes.
+For this to work, nodes must have a clusterable listener
 
 ==Modules==
 
