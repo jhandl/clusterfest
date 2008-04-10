@@ -8,7 +8,7 @@
 
 == Developer guide ==
 
-  [understanding Understanding clusterfest]
+  [understanding Clusterfest at a glance] - a very short introduction on the concepts of clusterfest
 
   [runningAsIs Running clusterfest as is]
 
