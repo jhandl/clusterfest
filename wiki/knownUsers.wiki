@@ -1,5 +1,6 @@
 #summary Projects that use clusterfest
-
+[home]
+http://opensource.flaptor.com/clusterfest/images/logo.png
 = Known users =
 
   * [http://www.hounder.org Hounder]
