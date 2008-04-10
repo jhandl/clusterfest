@@ -1,4 +1,5 @@
 #summary Internals of the ClusterManager
+[home]
 
 = Internals of the !ClusterManager =
 
@@ -9,3 +10,5 @@ http://clusterfest.googlecode.com/files/nodeDescriptors.png
 These node descriptors know the host and port where the corresponding node listener is listening, what type of node it is, and other information. They also know if that node is reachable or not. Suppose that Node 1 is not responding, the node descriptor 1 will be marked as *unreachable*:
 
 http://clusterfest.googlecode.com/files/nodeUnreachable.png
+
+[home]
