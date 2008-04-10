@@ -1,5 +1,8 @@
 #summary How to implement and run a clusterfest basic installation
 
+= TODO REVISE THIS =
+
+
 This section takes the terminology from [understanding understanding clusterfest]
 
 ==Steps to have a running installation==
