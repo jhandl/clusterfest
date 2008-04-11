@@ -18,4 +18,8 @@ The cluster manager maintains a representation of the cluster and knows when nod
 
 http://clusterfest.googlecode.com/files/modules.png
 
+Modules can access the node descriptor list of the cluster manager and all of it properties. However, some modules will not be interested in all the nodes, but only some of them. So modules will maintain another list of nodes: the ones that are of interest to the module. This is a list of *module node descriptors*. i.e.: the controller module will have a list of controller node descriptors.
+
+http://clusterfest.googlecode.com/files/moduleNodeDescriptors.png
+
 [home]
