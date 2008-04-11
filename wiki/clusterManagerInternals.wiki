@@ -14,4 +14,8 @@ These node descriptors know the host and port where the corresponding node liste
 
 http://clusterfest.googlecode.com/files/nodeUnreachable.png
 
+The cluster manager maintains a representation of the cluster and knows when nodes are fallen, but that alone is not very useful. Functionality in clusterfest is added through *modules*, which are contained also in the clustermanager:
+
+http://clusterfest.googlecode.com/files/modules.png
+
 [home]
