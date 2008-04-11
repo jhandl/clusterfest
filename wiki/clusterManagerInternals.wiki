@@ -24,4 +24,8 @@ In the following example, the module is interested in 2 of the nodes, so the mod
 
 http://clusterfest.googlecode.com/files/moduleNodeDescriptors.png
 
+If the module wants to perform some actions on the application nodes, it has to communicate with the actual node. This communication is done via xml-rpc, sending RPC requests to the  node listener in the node.
+
+http://clusterfest.googlecode.com/files/moduleCommunications.png
+
 [home]
