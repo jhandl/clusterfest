@@ -9,11 +9,13 @@ http://opensource.flaptor.com/clusterfest/images/logo.png
 == Project Info ==
   [knownUsers Projects] that use clusterfest
 
-== Guides ==
+== Understanding clusterfest ==
 
   [understanding Clusterfest at a glance] - a very short introduction on the concepts of clusterfest
 
   [clusterManagerInternals ClusterManager internals] - the info you need to understand how !ClusterManager and to add a module
+
+== Guides ==
 
   [runningAsIs Running clusterfest as is]
 
