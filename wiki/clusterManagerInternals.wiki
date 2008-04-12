@@ -32,7 +32,14 @@ http://clusterfest.googlecode.com/files/moduleCommunications.png
 
 For this communication to be meaningful the node listener has to understand the RPC requests. By default, the node listener understands the cluster manager but not the modules. That's why we need to add *module listeners* to the node listener. These listeners will understand the RPC requests from the module and perform actions over the nodes.
 
+When you create the node listener object in your application code in the nodes, you must also add the module listeners for the modules you will be using.
+
 http://clusterfest.googlecode.com/files/moduleListener.png
 
+== Summary ==
+
+  * The cluster manager is the base of clusterfest: it controls the node list and the modules.
+  * Modules add functionality. You can use existing modules or create your own
+  * For everything to run you have to add code to your application and configure the cluster manager
 
 [home]
