@@ -30,4 +30,9 @@ If the module wants to perform some actions on the application nodes, it has to 
 
 http://clusterfest.googlecode.com/files/moduleCommunications.png
 
+For this communication to be meaningful the node listener has to understand the RPC requests. By default, the node listener understands the cluster manager but not the modules. That's why we need to add *module listeners* to the node listener. These listeners will understand the RPC requests from the module and perform actions over the nodes.
+
+http://clusterfest.googlecode.com/files/moduleListener.png
+
+
 [home]
