@@ -11,8 +11,7 @@ Here you can config:
 
  * *clustering.nodes*: the list of nodes in the form address:port or address:port:installDir 
  * *clustering.modules*: the list of modules in the form moduleName:moduleClass. The module class must be a subclass of {{{NodeContainerModule}}} and have an empty constructor
-
-Any extra module configuration can be added here.
+ * Any extra module configuration can be added here.
 
 *Default modules will be fine, just add your nodes*
 
@@ -33,22 +32,9 @@ The server will call remote methods on your nodes. For that to happen you must h
 ClusterableListener clusterableListener = new ClusterableListener(port);
 }}}
 
-This will read a file called clustering.node.properties for configuration. There you can set the following variables:
+This will read a file called clustering.node.properties for configuration. There you can set:
 
- * {{{clustering.node.type}}}
-_The node type is a String that allows for further node discrimination, for example for identification in the node list home page (see [http://opensource.flaptor.com/clusterfest/screenshots.html screenshot]), or for enabling different behaviors within a module_
- * {{{clustering.node.listeners}}}
-_a list of pairs context:className meaning the class to be instantiated and listen at that context_
+ * *clustering.node.type*: The node type is a String that allows for further node discrimination, for example for identification in the node list home page (see [http://opensource.flaptor.com/clusterfest/screenshots.html screenshot]), or for enabling different behaviors within a module
+ * *clustering.node.listeners*: a list of pairs context:className meaning the class to be instantiated and listen at that context
 
-Then add module servers. Most modules will give you a helper method.
-
-{{{
-Monitor.addMonitorServer(clusterableServer, new AbstractMonitoreable() {...implement methods here...});
-Controller.addControllerServer(clusterableServer, new ControllableImplementation());
-}}}
-
-Otherwise you have to provide a context (String) and a handler (implementation of the module interface wrapped by {{{XmlrpcSerialization}}} - see [addingAModule adding a module]).
-
-{{{
-clusterableServer.addModuleServer("controllable", XmlrpcSerialization.handler(new ControllableImplementation()));
-}}}
+*Again: Default module listeners will be fine, just set the type of your node and the port you will listen at*
