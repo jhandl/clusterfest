@@ -1,5 +1,9 @@
 #summary How to implement and run a clusterfest basic installation
 
+[home]
+
+http://opensource.flaptor.com/clusterfest/images/logo.png
+
 _For introduction to Clusterfest concepts please read [atAGlance Clusterfest at a glance]_
 
 =Running Clusterfest as is=
@@ -38,3 +42,5 @@ This will read a file called clustering.node.properties for configuration. There
  * *clustering.node.listeners*: a list of pairs context:className meaning the class to be instantiated and listen at that context
 
 *Again: Default module listeners will be fine, just set the type of your node and the port you will listen at*
+
+[home]
