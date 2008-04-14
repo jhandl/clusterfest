@@ -13,7 +13,11 @@ You can check all this with the Monitor module. See the [http://code.google.com/
 
 == Creating the module server-side code ==
 
-To create a module you must make a subclass of *Module*. This abstract class already has most of the functionality for registering nodes. You will have to implement these methods:
+To create a module you must implement the interface [http://code.google.com/p/clusterfest/source/browse/trunk/src/com/flaptor/clusterfest/Module.java Module]. This interface is very little and is meant to notify modules when nodes are added or removed from the cluster. From there on, you can create any type of modules.
+
+An implementation that will serve most needs is [http://code.google.com/p/clusterfest/source/browse/trunk/src/com/flaptor/clusterfest/AbstractModule.java AbstractModule]
+
+abstract class already has most of the functionality for registering nodes. You will have to implement these methods:
 
 {{{
 abstract public boolean nodeBelongs(Node node) throws NodeUnreachableException;
