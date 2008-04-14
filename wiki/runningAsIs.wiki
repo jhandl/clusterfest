@@ -5,7 +5,7 @@ _For introduction to Clusterfest concepts please read [atAGlance Clusterfest at 
 =Running Clusterfest as is=
 ==Configuring the server==
 
-Configuration of the server is done in the {{{clustering.properties}}} config file.
+Configuration of the server is done in the *clustering.properties* config file.
 
 Here you can config:
 
@@ -26,10 +26,10 @@ http://localhost:47050/clustering
 
 ==Adding clustering code to the node==
 
-The server will call remote methods on your nodes. For that to happen you must have a {{{ClusterableListener}}} created somewhere in your node code. You create it specifying a port where it will listen to (which must match the corresponding server node configuration).
+The server will call remote methods on your nodes. For that to happen you must have a *NodeListener* created somewhere in your node code. You create it specifying a port where it will listen to (which must match the corresponding server node configuration).
 
 {{{
-ClusterableListener clusterableListener = new ClusterableListener(port);
+NodeListener nodeListener = new NodeListener(port);
 }}}
 
 This will read a file called clustering.node.properties for configuration. There you can set:
