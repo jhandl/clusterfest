@@ -34,18 +34,21 @@ There are also two ways of adding new pages to the webapp:
 void setup(WebServer server);
 }}}
 
-== JSP structure ==
+== Pages ==
 
-If you decide to add JSPs to the webapp folder, you already have some include files to keep the style and coherence with the rest of the clustering webapp. You should include this at the top
+Pages are rendered through velocity. If you want to add more pages and want to keep the style and coherence with the rest of the clustering webapp, you should include this at the top of your velocity files
+
 {{{
-<%request.setAttribute("pageTitle","home");%>
-<%@include file="include.top.jsp" %>
+#set($pageTitle = "your page title")
+#parse("include.top.vm")
 }}}
+
 and this at the bottom
+
 {{{
-<%@include file="include.bottom.jsp" %>
+#parse("include.bottom.vm")
 }}}
 
-Here is an example of [http://clusterfest.googlecode.com/svn/trunk/src/web-clustering/monitorNode.jsp monitorNode.jsp], the node page for the monitoring framework.
+Here is an example of [http://code.google.com/p/clusterfest/source/browse/trunk/websrc/web-clusterfest/monitorNode.vm monitor node page].
 
 [home]
