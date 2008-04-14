@@ -1,5 +1,9 @@
 #summary Monitoring module
 
+[home]
+
+http://opensource.flaptor.com/clusterfest/images/logo.png
+
 = Clusterfest Monitor Module=
 
 The Monitor module helps easily monitor nodes and detect problems in those nodes. It works in two phases:
@@ -18,3 +22,5 @@ clustering.monitor.checker.NODE_TYPE=somePackage.NodeTypeCheckerClassName
 }}}
 
 {{{somePackage.NodeTypeCheckerClassName}}} must be an implementation of the {{{NodeChecker}}} interface and have an empty constructor.
+
+[home]
