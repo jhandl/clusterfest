@@ -1,4 +1,7 @@
 #summary Adding a web interface to a custom module
+[home]
+
+http://opensource.flaptor.com/clusterfest/images/logo.png
 
 = Adding a Web Interface =
 
@@ -44,3 +47,5 @@ and this at the bottom
 }}}
 
 Here is an example of [http://clusterfest.googlecode.com/svn/trunk/src/web-clustering/monitorNode.jsp monitorNode.jsp], the node page for the monitoring framework.
+
+[home]
