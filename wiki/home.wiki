@@ -24,9 +24,7 @@ http://opensource.flaptor.com/clusterfest/images/logo.png
   [addingWebInterface Adding web interface to a module]
 
 == Modules ==
-  [monitoring Monitoring]
-
-  [controlling Controlling]
+  [modules Available modules]
 
 == API ==
   [http://opensource.flaptor.com/clusterfest/javadoc API documentation]
