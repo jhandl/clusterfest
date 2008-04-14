@@ -5,7 +5,7 @@ http://opensource.flaptor.com/clusterfest/images/logo.png
 
 = Adding a Web Interface =
 
-Most modules will have a web interface. To keep it closely integrated to the general Clusterfest web app, the {{{WebModule}}} API is provided. You can see how this was implemented in the [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/monitor/Monitor.java   Monitor module].
+Most modules will have a web interface. To keep it closely integrated to the general Clusterfest web app, the [http://code.google.com/p/clusterfest/source/browse/trunk/src/com/flaptor/clusterfest/WebModule.java WebModule] API is provided. You can see how this was implemented in the [http://code.google.com/p/clusterfest/source/browse/trunk/src/com/flaptor/clusterfest/monitoring/MonitorModule.java  Monitor module].
 
 There are two ways of adding HTML code to the main page:
 
