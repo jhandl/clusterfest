@@ -15,9 +15,7 @@ You can check all this with the Monitor module. See the [http://code.google.com/
 
 To create a module you must implement the interface [http://code.google.com/p/clusterfest/source/browse/trunk/src/com/flaptor/clusterfest/Module.java Module]. This interface is very little and is meant to notify modules when nodes are added or removed from the cluster. From there on, you can create any type of modules.
 
-An implementation that will serve most needs is [http://code.google.com/p/clusterfest/source/browse/trunk/src/com/flaptor/clusterfest/AbstractModule.java AbstractModule]
-
-abstract class already has most of the functionality for registering nodes. You will have to implement these methods:
+An implementation that will serve most needs is [http://code.google.com/p/clusterfest/source/browse/trunk/src/com/flaptor/clusterfest/AbstractModule.java AbstractModule], an abstract class that already has most of the functionality for registering nodes. You will have to implement these methods:
 
 {{{
 abstract public boolean nodeBelongs(Node node) throws NodeUnreachableException;
@@ -36,15 +34,15 @@ it will be called periodically, here you can update information about the node.
 
 == RPC interface ==
 
-You probably want some RPC from the server to the node. You must define an interface for this RPC (like [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/nodes/Monitoreable.java Monitoreable]). Then you must implement it in the node and use it in the server.
+You probably want some RPC from the server to the node. You must define an interface for this RPC (like [http://code.google.com/p/clusterfest/source/browse/trunk/src/com/flaptor/clusterfest/monitoring/node/Monitoreable.java Monitoreable]). Then you must implement it in the node and use it in the server.
 
 Say {{{ServiceInterface}}} is the interface for RPC and {{{node}}} is the {{{Node}}} registered in clusterfest. 
 
 Node side, you must create an implementation for that service interface. If {{{ServiceImplementation}}} is an implementation of {{{ServiceInterface}}}:
 
 {{{
-ClusterableServer clusterableServer = ...;
-clusterableServer.addModuleServer("ServiceInterfaceContext", new ServiceImplementation())
+NodeListener nodeListener = new NodeListener(port);
+nodeListener.addModuleListener("ServiceInterfaceContext", new ServiceImplementation())
 }}}
 
 For using that service it you should add this code in the server:
