@@ -1,25 +1,11 @@
 #summary How to implement and run a clusterfest basic installation
 
-= TODO REVISE THIS =
+_For introduction to Clusterfest concepts please read [atAGlance Clusterfest at a glance]_
 
-
-This section takes the terminology from [understanding understanding clusterfest]
-
-==Steps to have a running installation==
-You must:
-
- * server-side:
-    * configure the server (tell it where the nodes are and what modules to use)
-    * run the server (start clusterfest and its web server)
-    * Use a webbrowser to access the frontend
- * node-side:
-    * configure the node (tell it what type of node is, and what modules to export)
-    * add clustering node constructor code to your client code
-    * run the nodes
-
+=Running Clusterfest as is=
 ==Configuring the server==
 
-Configuration of the server is done in the {{{clustering.properties}}} config file. This file imports defaults from {{{clustering.properties.defaults}}} file that can be found inside the distribution jar.
+Configuration of the server is done in the {{{clustering.properties}}} config file.
 
 Here you can config:
 
