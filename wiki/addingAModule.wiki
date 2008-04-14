@@ -2,7 +2,8 @@
 [home]
 
 http://opensource.flaptor.com/clusterfest/images/logo.png
-_For introduction to Clusterfest concepts please read [clusterManagerInternals ClusterManager internals]_
+
+_For introduction on how clusterfest works please read [clusterManagerInternals ClusterManager internals]_
 
 = Adding a module =
 
