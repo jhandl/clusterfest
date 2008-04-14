@@ -9,10 +9,8 @@ Configuration of the server is done in the {{{clustering.properties}}} config fi
 
 Here you can config:
 
- * {{{clustering.nodes}}}
-_the list of nodes in the form address:port or address:port:installDir_
- * {{{clustering.modules}}}
-_the list of modules in the form moduleName:moduleClass. The module class must be a subclass of {{{NodeContainerModule}}} and have an empty constructor_
+ * *clustering.nodes*: the list of nodes in the form address:port or address:port:installDir 
+ * *clustering.modules*: the list of modules in the form moduleName:moduleClass. The module class must be a subclass of {{{NodeContainerModule}}} and have an empty constructor
 
 Any extra module configuration can be added here.
 
