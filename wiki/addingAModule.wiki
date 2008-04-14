@@ -9,7 +9,7 @@ _For introduction on how clusterfest works please read [clusterManagerInternals 
 
 A module provides some functionality over some or all the nodes of the clustering framework. A typical module contains server and node side code.
 
-You can check all this with the Monitor module. See the [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/monitor/Monitor.java server-side code] and the [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clustering/monitoring/nodes/AbstractMonitoreable.java node-side code]
+You can check all this with the Monitor module. See the [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clusterfest/monitoring/monitor/Monitor.java server-side code] and the [http://clusterfest.googlecode.com/svn/trunk/src/com/flaptor/clusterfest/monitoring/nodes/AbstractMonitoreable.java node-side code]
 
 == Creating the module server-side code ==
 
