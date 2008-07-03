@@ -1,7 +1,4 @@
-#summary Creating and adding a custom module
-[home]
-
-http://opensource.flaptor.com/clusterfest/images/logo.png
+[http://opensource.flaptor.com/clusterfest http://opensource.flaptor.com/clusterfest/images/logo.png]
 
 _For introduction on how clusterfest works please read [clusterManagerInternals ClusterManager internals]_
 
