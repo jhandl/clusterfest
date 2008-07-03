@@ -18,3 +18,5 @@ clustering.monitor.checker.NODE_TYPE=somePackage.NodeTypeCheckerClassName
 }}}
 
 {{{somePackage.NodeTypeCheckerClassName}}} must be an implementation of the {{{NodeChecker}}} interface and have an empty constructor.
+
+[modules] [home]
