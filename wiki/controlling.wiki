@@ -1,7 +1,4 @@
-#summary Controlling module
-[home]
-
-http://opensource.flaptor.com/clusterfest/images/logo.png
+[http://opensource.flaptor.com/clusterfest http://opensource.flaptor.com/clusterfest/images/logo.png]
 
 = Clusterfest Control Module =
 
