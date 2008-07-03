@@ -1,8 +1,5 @@
-#summary Internals of the ClusterManager
+[http://opensource.flaptor.com/clusterfest http://opensource.flaptor.com/clusterfest/images/logo.png]
 
-[home]
-
-http://opensource.flaptor.com/clusterfest/images/logo.png
 
 = Internals of the !ClusterManager =
 
