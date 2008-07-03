@@ -2,6 +2,11 @@
 
 = Modules available for Clusterfest =
 
+  * [monitorModule Monitor]
+  * [controllerModule Controller]
+  * [actionModule Action]
+  * [deployModule deploy]
+
 = Monitor Module=
 
 The Monitor module helps easily monitor nodes and detect problems in those nodes. It works in two phases:
