@@ -1,8 +1,4 @@
-#summary Clusterfest at a glance
-
-[home]
-
-http://opensource.flaptor.com/clusterfest/images/logo.png
+[http://opensource.flaptor.com/clusterfest http://opensource.flaptor.com/clusterfest/images/logo.png]
 
 = Clusterfest at a glance =
 
